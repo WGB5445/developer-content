@@ -1,11 +1,10 @@
 ---
 date: Jul 29, 2023
 difficulty: intro
-title: "How to get Solana devnet SOL (including airdrops and faucets)"
+title: "如何获取 Solana 开发网络 devnet 的 SOL（包括空投和水龙头）"
 seoTitle: "Faucets: How to get Solana devnet SOL"
 description:
-  "A list of the most common ways to get devnet and testnet SOL tokens for
-  Solana development. Including: airdrop, web3.js, POW faucet, and more."
+  "获取 Solana 开发和测试网络 （ devnet and testnet ）SOL 的最常见方式包括：airdrop、web3.js、POW 水龙头等。"
 tags:
   - faucet
 keywords:
@@ -15,137 +14,122 @@ keywords:
   - testnet
 ---
 
-# How to get Solana devnet SOL (including airdrops and faucets)
+# 如何获取 Solana 的开发网络（devnet）SOL代币（包括空投和水龙头）
 
-This is a collection of the different ways for developers to acquire SOL on
-Solana's testing networks, the Solana devnet and testnet.
+下面是开发者在 Solana 开发网络（devnet）和测试网络（testnet）上获取 SOL 的不同途径。
 
 ## 1. Solana Airdrop
 
-_Available on Devnet and Testnet_
+_在 Devnet 和 Testnet 上可用_
 
-This is the base way of acquiring SOL, but it can be subject to rate limits when
-there is a high number of airdrops.
+这是获取 SOL 的基本方式，但在 airdrop 请求次数较多时可能会受到速率限制。
 
-Here are three different ways of requesting airdrops with it:
+以下是使用此方法请求空投的三种不同方式：
 
-### Using the Solana CLI:
+### 使用 Solana CLI:
 
 ```bash
 solana airdrop 2
 ```
 
-### Using web3.js:
+### 使用 web3.js:
 
 ```js
 const connection = new Connection("https://api.devnet.solana.com");
 connection.requestAirdrop();
 ```
 
-See more:
+查看更多:
 [`requestAirdrop()`](https://solana-labs.github.io/solana-web3.js/classes/Connection.html#requestAirdrop)
-documentation inside web3.js.
+在 web3.js 文档中的相关说明
 
-## 2. Web Faucet
+## 2. 网络水龙头
 
-_Available for Devnet_
+_在 Devnet 上可用_
 
-1. [faucet.solana.com](https://faucet.solana.com) - A public web faucet hosted
-   by the Solana Foundation
-2. [SolFaucet.com](https://solfaucet.com/) - Web UI for airdrops from the public
-   RPC endpoints
-3. [QuickNode](https://faucet.quicknode.com/solana/devnet) - A web faucet
-   operated by QuickNode
+1. [faucet.solana.com](https://faucet.solana.com) - 由 Solana Foundation 托管的公共网络水龙头
+2. [SolFaucet.com](https://solfaucet.com/) - 用于从公共RPC端点进行空投的 Web 用户界面
+3. [QuickNode](https://faucet.quicknode.com/solana/devnet) - 由 QuickNode 运营的网络水龙头
 
-_Available for Testnet_
+_在 Testnet_ 上可用_
 
-1. [faucet.solana.com](https://faucet.solana.com) - A public web faucet hosted
-   by the Solana Foundation
-2. [SolFaucet.com](https://solfaucet.com/) - Web UI for airdrops from the public
-   RPC endpoints
-3. [QuickNode](https://faucet.quicknode.com/solana/testnet) - A web faucet
-   operated by QuickNode
-4. [TestnetFaucet.org](https://testnetfaucet.org) - A web faucet with a rate
-   limit separate than the public RPC endpoints, operated by
-   [@Ferric](https://twitter.com/ferric)
+1. [faucet.solana.com](https://faucet.solana.com) - 由Solana Foundation托管的公共网络水龙头
+2. [SolFaucet.com](https://solfaucet.com/) - 用于从公共RPC端点进行空投的Web用户界面
+3. [QuickNode](https://faucet.quicknode.com/solana/testnet) - 由QuickNode运营的网络水龙头
+4. [TestnetFaucet.org](https://testnetfaucet.org) - 由[@Ferric](https://twitter.com/ferric)运营的网络水龙头，其速率限制与公共RPC端点分开
 
-## 3. RPC Provider Faucets
+## 3. RPC Providers 水龙头
 
-_Available for Devnet_
+_在 Devnet 上可用_
 
-RPC Providers can opt in to distributing devnet SOL via their devnet Validators.
+RPC Providers 可以选择通过开发网络验证节点分发开发网络的 SOL。
 
 <Callout>
 
-If you are an RPC Provider and want to distribute SOL please
-[get in touch here](https://c852ena8x5c.typeform.com/to/cUj1iRhS).
+如果您是 RPC 提供者并希望分发 SOL，请[在此联系我们](https://c852ena8x5c.typeform.com/to/cUj1iRhS)。
 
 </Callout>
 
-Currently Supported:
+当前支持的：
 
 1. [Helius](https://www.helius.dev/)
 2. [QuickNode](https://faucet.quicknode.com/solana/devnet)
 3. [Triton](https://triton.one/)
 
-### Using the Solana CLI
+### 使用 Solana 命令行界面（CLI）
 
-Specify your [Cluster](https://docs.solana.com/clusters) to be your RPC
-provider's URL.
+指定您的 [clusters](https://docs.solana.com/clusters) 作为您的 RPC provider 的 URL。
 
 ```bash
 solana config set --url <your RPC url>
 ```
 
-Then you can request an airdrop like you would in the first option in this
-guide.
+然后，您可以像本指南中的第一选项一样请求空投。
 
 ```bash
 solana airdrop 2
 ```
 
-### Using Web3.js
+### 使用 Web3.js
 
 ```js
 const connection = new Connection("your RPC url");
 connection.requestAirdrop();
 ```
 
-## 4. Proof of work Faucet
+## 4. 工作证明 水龙头
 
-_Available for Devnet_
+_在 Devnet 上可用_
 
-This is a proof of work Faucet where devnet SOL can be distributed to you thanks
-to your computing power.
+这是一个工作证明水龙头，通过您的计算能力，可以向您分发 devnet 的 SOL。
 
-**Install the Devnet POW Crate:**
+**安装 devnet 的 POW Crate：**
 
 ```bash
 cargo install devnet-pow
 ```
 
-**Start mining devnet SOL**
+**开始挖掘 devnet SOL**
 
 ```bash
 devnet-pow mine
 ```
 
-_⚠️ The [POW Faucet](https://github.com/jarry-xiao/proof-of-work-faucet) is
-maintained by Ellipsis Labs_
+_⚠️ [POW Faucet](https://github.com/jarry-xiao/proof-of-work-faucet) 由 Ellipsis Labs 维护。_
 
-## 5. Discord Faucets
+## 5. Discord 水龙头
 
-Various Discord communities have setup devnet SOL Faucets as BOTs.
+一些 Discord 社群已经设置了 BOT 分发 devnet SOL。
 
 | Community      | Usage                                                       | Link                                         |
 | -------------- | ----------------------------------------------------------- | -------------------------------------------- |
-| The 76 Devs    | Run `!gibsol` in the BOT commands channel.                  | [Join Server](https://discord.gg/RrChGyDeRv) |
-| The LamportDAO | Run `/drop <address> <amount>` in the BOT commands channel. | [Join Server](https://discord.gg/JBVrJgtFkq) |
+| The 76 Devs    | 在 BOT commands 频道执行 `!gibsol`.                  | [加入服务器](https://discord.gg/RrChGyDeRv) |
+| The LamportDAO | 在 BOT commands 频道执行 `/drop <address> <amount>`. | [加入服务器](https://discord.gg/JBVrJgtFkq) |
 
-## 6. Reuse devnet SOL
+## 6. 重复利用 devnet SOL
 
-The most sustainable way to save SOL is to reuse it. With the Solana CLI you can
-show and close all previous buffer accounts with the following command:
+最可持续的保存 SOL 的方式是进行重复使用。
+使用 Solana CLI，您可以通过以下命令显示并关闭所有先前的缓冲账户：
 
 ```bash
 solana program show --buffers
@@ -153,44 +137,34 @@ solana program show --buffers
 
 <Callout title="What's a buffer account?">
 
-Buffer accounts are automatically created when you deploy a program. All the
-program's data is transferred into this account during the deployment. When its
-done, the data of your program is replaced with the new data.
+在部署程序时，缓冲账户会自动创建。在部署过程中，程序的所有数据都会转移到该账户中。一旦完成，程序的数据将被新数据替换。
 
 </Callout>
 
-Normally, these buffer accounts are closed automatically. In the event they are
-not, you can close them manually to reclaim the SOL in them using the following
-command:
+通常，这些缓冲账户会自动关闭。如果它们没有自动关闭，您可以使用以下命令手动关闭它们，以便收回其中的 SOL：
 
 ```bash
 solana program close <buffer account>
 ```
 
-You can also the `show` subcommand to show all programs you deployed have
-already deployed to your currently selected cluster:
+您还可以使用 `show` 子命令显示您已经部署到当前选择集群的所有 program：
 
 ```bash
 solana program show --programs
 ```
 
-You can then close each program with the `close` subcommand to close them and
-retrieve the SOL you used to deploy them:
+然后，您可以使用 `close` 子命令关闭每个程序，以关闭它们并检索您用于部署它们的 SOL：
 
 ```bash
 solana program close <program id>
 ```
 
-You can then use that SOL to deploy new programs.
+然后，您可以使用那些 SOL 来部署新的程序。
 
 <Callout type="caution">
 
-You will **NOT** able to use the same program id again once you closed the
-program. So make sure are closing the right program and that you will not need
-that id anymore.
+一旦关闭了程序，您将**无法**再次使用相同的程序ID。因此，请确保关闭的是正确的程序，并且您将不再需要该 ID。
 
-If you get rate limited by the RPC endpoint your Solana CLI is configured to
-use, you can add `-u "urlToYourRpc"` to the any of these command to use a
-different RPC endpoint.
+如果您受到 Solana CLI 配置使用的 RPC 端点的速率限制，您可以在这些命令中的任何一个后添加 `-u "urlToYourRpc"`，以使用不同的RPC端点。
 
 </Callout>
